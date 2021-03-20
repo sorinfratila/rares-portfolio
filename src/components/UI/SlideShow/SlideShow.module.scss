@@ -1,0 +1,168 @@
+.Slides {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  ul {
+    list-style: none;
+    position: relative;
+    margin: 0;
+    width: 100%;
+
+    li {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+
+      /* css3 animation */
+      animation-name: anim_slides;
+      animation-delay: 0;
+      // animation-duration: 16s;
+      animation-play-state: running;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+
+      -webkit-animation-name: anim_slides;
+      -webkit-animation-delay: 0;
+      // -webkit-animation-duration: 16s;
+      -webkit-animation-play-state: running;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-fill-mode: forwards;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-direction: normal;
+
+      -moz-animation-name: anim_slides;
+      -moz-animation-delay: 0;
+      // -moz-animation-duration: 16s;
+      -moz-animation-play-state: running;
+      -moz-animation-timing-function: linear;
+      -moz-animation-fill-mode: forwards;
+      -moz-animation-iteration-count: infinite;
+      -moz-animation-direction: normal;
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.Slides ul li:nth-child(2),
+.Slides ul li:nth-child(2) div {
+  animation-delay: 4s;
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+}
+.Slides ul li:nth-child(3),
+.Slides ul li:nth-child(3) div {
+  animation-delay: 8s;
+  -webkit-animation-delay: 8s;
+  -moz-animation-delay: 8s;
+}
+.Slides ul li:nth-child(4),
+.Slides ul li:nth-child(4) div {
+  animation-delay: 12s;
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+}
+
+/**
+*
+*/
+.Slides ul li:nth-child(5),
+.Slides ul li:nth-child(5) div {
+  animation-delay: 16s;
+  -webkit-animation-delay: 16s;
+  -moz-animation-delay: 16s;
+}
+.Slides ul li:nth-child(6),
+.Slides ul li:nth-child(6) div {
+  animation-delay: 20s;
+  -webkit-animation-delay: 20s;
+  -moz-animation-delay: 20s;
+}
+.Slides ul li:nth-child(7),
+.Slides ul li:nth-child(7) div {
+  animation-delay: 24s;
+  -webkit-animation-delay: 24s;
+  -moz-animation-delay: 24s;
+}
+.Slides ul li:nth-child(8),
+.Slides ul li:nth-child(8) div {
+  animation-delay: 28s;
+  -webkit-animation-delay: 28s;
+  -moz-animation-delay: 28s;
+}
+.Slides ul li:nth-child(9),
+.Slides ul li:nth-child(9) div {
+  animation-delay: 32s;
+  -webkit-animation-delay: 32s;
+  -moz-animation-delay: 32s;
+}
+.Slides ul li:nth-child(10),
+.Slides ul li:nth-child(10) div {
+  animation-delay: 36s;
+  -webkit-animation-delay: 36s;
+  -moz-animation-delay: 36s;
+}
+
+@keyframes anim_slides {
+  0% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes anim_slides {
+  0% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes anim_slides {
+  0% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
