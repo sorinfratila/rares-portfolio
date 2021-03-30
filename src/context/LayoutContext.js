@@ -1,32 +1,28 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react"
+import PropTypes from "prop-types"
 
 const defaultContextValue = {
-  mainMenuOpen: false,
-  headerMenuOpen: false,
-  toggleMainMenu: () => {},
-  toggleHeaderMenu: () => {},
-};
+    mainMenuOpen: false,
+    toggleMainMenu: () => {},
+}
 
-export const LayoutContext = React.createContext(defaultContextValue);
+export const LayoutContext = React.createContext(defaultContextValue)
 
 export const LayoutProvider = props => {
-  const [mainMenuOpen, toggleMainMenu] = useState(false);
-  const [headerMenuOpen, toggleHeaderMenu] = useState(false);
+    const [mainMenuOpen, toggleMainMenu] = useState(false)
 
-  return (
-    <LayoutContext.Provider
-      value={{
-        mainMenuOpen,
-        headerMenuOpen,
-        toggleMainMenu: res => toggleMainMenu(res),
-        toggleHeaderMenu: () => toggleHeaderMenu(!headerMenuOpen),
-      }}>
-      {props.children}
-    </LayoutContext.Provider>
-  );
-};
+    return (
+        <LayoutContext.Provider
+            value={{
+                mainMenuOpen,
+                toggleMainMenu: res => toggleMainMenu(res),
+            }}
+        >
+            {props.children}
+        </LayoutContext.Provider>
+    )
+}
 
 LayoutProvider.propTypes = {
-  children: PropTypes.node,
-};
+    children: PropTypes.node,
+}

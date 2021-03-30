@@ -21,8 +21,8 @@ const typography = new Typography({
   ],
   baseFontSize: '10px',
   baseLineHeight: 1.666,
-  headerFontFamily: ['Avenir Next', 'Helvetica', 'sans-serif'],
-  bodyFontFamily: ['Avenir Next', 'Roboto', 'sans-serif'],
+  headerFontFamily: ['Roboto', 'Avenir Next', 'Helvetica', 'sans-serif'],
+  bodyFontFamily: ['Roboto', 'Avenir Next', 'sans-serif'],
 });
 
 // Export helper functions

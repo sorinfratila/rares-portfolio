@@ -14,7 +14,7 @@ function backdrop(props) {
   };
 
   return (
-    <div onClick={() => delay(clicked)} className={classesArr.join(' ')}></div>
+    <div onClick={() => delay(clicked)} className={classesArr.join(' ')}/>
   );
 }
 

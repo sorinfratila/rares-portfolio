@@ -1,68 +1,43 @@
 .MenuItems {
-  z-index: 11;
-  // margin-top: 7rem;
-  position: absolute;
-  right: 0;
-  top: 70px;
-  width: 48rem;
-  visibility: hidden;
-  overflow: hidden;
-  height: 0;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  transform: scale(1);
+    z-index: 12;
+    // margin-top: 7rem;
+    position: absolute;
+    right: 250px;
+    top: 70px;
+    width: auto;
+    min-width: 315px;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1);
 
-  &.Shown {
-    visibility: visible;
-    min-height: 360px;
-    position: fixed;
-  }
-}
-
-.MenuItemsLeft {
-  z-index: 11;
-  // margin-top: 7rem;
-  position: absolute;
-  left: 0;
-  top: 70px;
-  width: 48rem;
-  visibility: hidden;
-  overflow: hidden;
-  height: 0;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  transform: scale(1);
-
-  &.Shown {
-    visibility: visible;
-    min-height: 360px;
-    position: fixed;
-  }
+    &.Shown {
+        visibility: visible;
+        height: auto;
+        position: fixed;
+    }
 }
 
 @media (max-width: 1023px) {
-  .MenuItems,
-  .MenuItemsLeft {
-    width: 85%;
-    height: 0;
-    // padding-top: 60px;
+    .MenuItems {
+        width: 85%;
+        height: 0;
+        // padding-top: 60px;
 
-    &.Shown {
-      visibility: visible;
-      min-height: 360px;
+        &.Shown {
+            visibility: visible;
+        }
     }
-  }
 }
 @media (min-width: 1024px) {
-  .MenuItems,
-  .MenuItemsLeft {
-    width: 48rem;
-    height: 0;
-    // padding-top: 60px;
+    .MenuItems {
+        height: 0;
+        // padding-top: 60px;
 
-    &.Shown {
-      visibility: visible;
-      min-height: 360px;
+        &.Shown {
+            visibility: visible;
+        }
     }
-  }
 }
