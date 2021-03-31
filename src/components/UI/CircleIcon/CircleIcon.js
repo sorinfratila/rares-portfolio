@@ -6,15 +6,13 @@ CircleIcon.propTypes = {
     icon: PropTypes.func,
     height: PropTypes.string,
     width: PropTypes.string,
-    selected: PropTypes.bool,
 }
 
-function CircleIcon({ icon, height = "36px", width = "36px", selected }) {
+function CircleIcon({ icon, height = "36px", width = "36px" }) {
     const classesArr = [classes.CircleIcon]
     return (
         <div
             className={classesArr.join(" ")}
-            aria-selected={selected}
             style={{
                 height,
                 width,

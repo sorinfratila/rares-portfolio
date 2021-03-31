@@ -15,27 +15,22 @@ function Menu({ clicked, show, menuList, backdropClicked }) {
         {
             link: "www.google.com",
             Icon: FaLinkedinIn,
-            selected: false,
         },
         {
             link: "www.google.dk",
             Icon: FaEnvelope,
-            selected: true,
         },
         {
             link: "www.google.it",
             Icon: FaInstagram,
-            selected: false,
         },
         {
             link: "www.google.ru",
             Icon: FaFacebookF,
-            selected: false,
         },
         {
             link: "www.google.ro",
             Icon: FaBehance,
-            selected: false,
         },
     ]
 
@@ -82,11 +77,7 @@ function Menu({ clicked, show, menuList, backdropClicked }) {
                     >
                         {iconsArr.map(({ Icon, link, selected }) => {
                             return (
-                                <CircleIcon
-                                    key={link}
-                                    icon={() => <Icon />}
-                                    selected={selected}
-                                />
+                                <CircleIcon key={link} icon={() => <Icon />} />
                             )
                         })}
                     </div>
