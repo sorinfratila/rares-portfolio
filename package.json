@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "sorin.fratila@protonmail.ch",
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "gatsby": "^3.0.1",
     "gatsby-plugin-gatsby-cloud": "^2.0.0",
     "gatsby-plugin-image": "^1.0.0",
@@ -27,6 +28,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.21",
     "prettier": "2.2.1"
   },
   "keywords": [

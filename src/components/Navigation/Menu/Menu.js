@@ -1,23 +1,97 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Backdrop from "../../UI/Backdrop/Backdrop"
-import * as classes from "./Menu.module.scss"
 import NavigationItems from "../NavigationItems/NavigationItems"
+import CircleIcon from "../../UI/CircleIcon/CircleIcon"
+import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope"
+import { FaBehance } from "@react-icons/all-files/fa/FaBehance"
+import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
+import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF"
+import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 
 function Menu({ clicked, show, menuList, backdropClicked }) {
-    const classesArr = [classes.MenuItems]
-    if (show) classesArr.push(classes.Shown)
+    const nowYear = new Date().getFullYear()
+    const iconsArr = [
+        {
+            link: "www.google.com",
+            Icon: FaLinkedinIn,
+            selected: false,
+        },
+        {
+            link: "www.google.dk",
+            Icon: FaEnvelope,
+            selected: true,
+        },
+        {
+            link: "www.google.it",
+            Icon: FaInstagram,
+            selected: false,
+        },
+        {
+            link: "www.google.ru",
+            Icon: FaFacebookF,
+            selected: false,
+        },
+        {
+            link: "www.google.ro",
+            Icon: FaBehance,
+            selected: false,
+        },
+    ]
 
     return (
         <>
-            <Backdrop show={show} clicked={backdropClicked} />
-            <div className={classesArr.join(" ")}>
-                <NavigationItems
-                    items={menuList}
-                    clicked={clicked}
-                    show={show}
-                />
-            </div>
+            <Backdrop show={show} clicked={backdropClicked}>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-end",
+                        flex: "1",
+                    }}
+                >
+                    <div
+                        style={{
+                            height: "5%",
+                            fontSize: "20px",
+                            fontWeight: "500",
+                            letterSpacing: "0.5px",
+                        }}
+                    >
+                        &copy;{nowYear} All rights reserved
+                    </div>
+                </div>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        flex: "1",
+                    }}
+                >
+                    <NavigationItems
+                        items={menuList}
+                        clicked={clicked}
+                        show={show}
+                    />
+                    <div
+                        style={{
+                            height: "5%",
+                            display: "flex",
+                            justifyContent: "flex-end",
+                        }}
+                    >
+                        {iconsArr.map(({ Icon, link, selected }) => {
+                            return (
+                                <CircleIcon
+                                    key={link}
+                                    icon={() => <Icon />}
+                                    selected={selected}
+                                />
+                            )
+                        })}
+                    </div>
+                </div>
+            </Backdrop>
         </>
     )
 }
