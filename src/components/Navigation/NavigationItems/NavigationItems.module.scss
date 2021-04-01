@@ -32,6 +32,7 @@
         }
     }
 }
+
 @media (min-width: 1024px) {
     .NavigationItems {
         height: 0;
@@ -39,5 +40,11 @@
         &.Shown {
             visibility: visible;
         }
+    }
+}
+
+@media (max-width: 767px) {
+    .NavigationItems {
+        justify-content: flex-start;
     }
 }

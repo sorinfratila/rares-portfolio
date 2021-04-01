@@ -132,7 +132,9 @@
 }
 @media (max-width: 767px) {
     .NavigationItem a {
-        font-size: 34px;
+        font-size: 4rem;
         line-height: 1.47em;
+        font-weight: 300;
+        letter-spacing: 0.74px;
     }
 }

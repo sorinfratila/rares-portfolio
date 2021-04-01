@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import Backdrop from "../../UI/Backdrop/Backdrop"
 import NavigationItems from "../NavigationItems/NavigationItems"
@@ -9,7 +9,15 @@ import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
 import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 
+import * as classes from "./Menu.module.scss"
+
 function Menu({ clicked, show, menuList, backdropClicked }) {
+    const [showFooter, setShowFooter] = useState(true)
+
+    useEffect(() => {
+        setShowFooter(window.innerWidth > 767)
+    }, [show])
+
     const nowYear = new Date().getFullYear()
     const iconsArr = [
         {
@@ -34,54 +42,49 @@ function Menu({ clicked, show, menuList, backdropClicked }) {
         },
     ]
 
+    let footer = (
+        <div className={classes.Footer}>
+            &copy;{nowYear} All rights reserved
+        </div>
+    )
+
+    let icons = (
+        <div className={classes.Icons}>
+            {iconsArr.map(({ Icon, link }) => {
+                return <CircleIcon key={link} icon={() => <Icon />} />
+            })}
+        </div>
+    )
+
+    if (!showFooter) {
+        footer = null
+        icons = null
+    }
+
     return (
         <>
             <Backdrop show={show} clicked={backdropClicked}>
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "flex-end",
-                        flex: "1",
-                    }}
-                >
-                    <div
-                        style={{
-                            height: "5%",
-                            fontSize: "20px",
-                            fontWeight: "500",
-                            letterSpacing: "0.5px",
-                        }}
-                    >
-                        &copy;{nowYear} All rights reserved
+                {!showFooter ? (
+                    <div className={classes.Right}>
+                        <NavigationItems
+                            items={menuList}
+                            clicked={clicked}
+                            show={show}
+                        />
                     </div>
-                </div>
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        flex: "1",
-                    }}
-                >
-                    <NavigationItems
-                        items={menuList}
-                        clicked={clicked}
-                        show={show}
-                    />
-                    <div
-                        style={{
-                            height: "5%",
-                            display: "flex",
-                            justifyContent: "flex-end",
-                        }}
-                    >
-                        {iconsArr.map(({ Icon, link, selected }) => {
-                            return (
-                                <CircleIcon key={link} icon={() => <Icon />} />
-                            )
-                        })}
-                    </div>
-                </div>
+                ) : (
+                    <>
+                        <div className={classes.Left}>{footer}</div>
+                        <div className={classes.Right}>
+                            <NavigationItems
+                                items={menuList}
+                                clicked={clicked}
+                                show={show}
+                            />
+                            {icons}
+                        </div>
+                    </>
+                )}
             </Backdrop>
         </>
     )
@@ -90,9 +93,7 @@ function Menu({ clicked, show, menuList, backdropClicked }) {
 Menu.propTypes = {
     clicked: PropTypes.func,
     show: PropTypes.bool,
-    linkClicked: PropTypes.func,
     menuList: PropTypes.array,
-    isMain: PropTypes.bool,
     backdropClicked: PropTypes.func,
 }
 

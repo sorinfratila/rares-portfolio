@@ -7,6 +7,7 @@ import { LayoutContext } from "../../context/LayoutContext"
 
 const Layout = props => {
     const { mainMenuOpen, toggleMainMenu } = useContext(LayoutContext)
+
     const navigationItems = [
         { name: "Work", to: "" },
         { name: "About", to: "about" },
@@ -16,9 +17,11 @@ const Layout = props => {
 
     return (
         <>
-            <MenuButton clicked={() => toggleMainMenu(!mainMenuOpen)} />
+            <MenuButton
+                isOpen={mainMenuOpen}
+                clicked={() => toggleMainMenu(!mainMenuOpen)}
+            />
             <Menu
-                isMain={true}
                 show={mainMenuOpen}
                 menuList={navigationItems}
                 clicked={() => toggleMainMenu(!mainMenuOpen)}
