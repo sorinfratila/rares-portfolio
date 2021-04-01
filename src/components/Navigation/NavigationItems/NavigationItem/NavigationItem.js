@@ -2,28 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import * as classes from "./NavigationItem.module.scss"
 import { Link } from "gatsby"
-import "../../../../App.scss"
+import * as fade from "../../../../transitions/Fade.module.scss"
 
-function NavigationItem(props) {
-    const { link, children, show, clicked } = props
-    const classesArr = [classes.NavigationItem]
-
-    if (show) {
-        classesArr.push(classes.On)
-    }
-
-    const delay = func => {
-        // delay function used to toggle list item classes to obtain fade out effect
-        // when closing the menu by selecting another route
-        const index = classesArr.findIndex(el => el.includes("On"))
-        const element = classesArr[index]
-        classesArr.splice(index, 1)
-
-        return setTimeout(() => {
-            classesArr.push(element)
-            return func.apply(null)
-        }, 350)
-    }
+function NavigationItem({ link, children, show, clicked }) {
+    const classesArr = show
+        ? [classes.NavigationItem, fade.FadeIn, fade.On]
+        : [classes.NavigationItem, fade.FadeIn]
 
     return (
         <li className={classesArr.join(" ")}>

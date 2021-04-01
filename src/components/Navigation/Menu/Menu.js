@@ -10,6 +10,7 @@ import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 
 import * as classes from "./Menu.module.scss"
+import * as fade from "../../../transitions/Fade.module.scss"
 
 function Menu({ clicked, show, menuList, backdropClicked }) {
     const [showFooter, setShowFooter] = useState(true)
@@ -17,6 +18,10 @@ function Menu({ clicked, show, menuList, backdropClicked }) {
     useEffect(() => {
         setShowFooter(window.innerWidth > 767)
     }, [show])
+
+    const fadeArr = show
+        ? [classes.Footer, fade.FadeIn, fade.On]
+        : [classes.Footer, fade.FadeIn]
 
     const nowYear = new Date().getFullYear()
     const iconsArr = [
@@ -43,7 +48,7 @@ function Menu({ clicked, show, menuList, backdropClicked }) {
     ]
 
     let footer = (
-        <div className={classes.Footer}>
+        <div className={fadeArr.join(" ")}>
             &copy;{nowYear} All rights reserved
         </div>
     )
@@ -51,7 +56,9 @@ function Menu({ clicked, show, menuList, backdropClicked }) {
     let icons = (
         <div className={classes.Icons}>
             {iconsArr.map(({ Icon, link }) => {
-                return <CircleIcon key={link} icon={() => <Icon />} />
+                return (
+                    <CircleIcon show={show} key={link} icon={() => <Icon />} />
+                )
             })}
         </div>
     )
