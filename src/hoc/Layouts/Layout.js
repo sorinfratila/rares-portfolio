@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import MenuButton from "../../components/UI/MenuButton/MenuButton"
+import "../../App.scss"
 
 import Menu from "../../components/Navigation/Menu/Menu"
 import { LayoutContext } from "../../context/LayoutContext"

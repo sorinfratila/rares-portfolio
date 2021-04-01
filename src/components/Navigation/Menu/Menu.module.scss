@@ -12,14 +12,17 @@
 }
 
 .Footer {
-    height: 5%;
-    font-size: 20px;
+    height: 8%;
+    font-size: 2rem;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05rem;
+    display: flex;
+    align-items: flex-end;
 }
 
 .Icons {
-    height: 5%;
+    height: 8%;
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
 }

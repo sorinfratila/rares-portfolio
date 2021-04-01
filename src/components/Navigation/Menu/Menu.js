@@ -13,7 +13,7 @@ import * as classes from "./Menu.module.scss"
 import * as fade from "../../../transitions/Fade.module.scss"
 
 function Menu({ clicked, show, menuList, backdropClicked }) {
-    const [showFooter, setShowFooter] = useState(true)
+    const [showFooter, setShowFooter] = useState(false)
 
     useEffect(() => {
         setShowFooter(window.innerWidth > 767)
