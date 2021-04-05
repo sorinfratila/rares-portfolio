@@ -1,10 +1,12 @@
+@import "src/styles/variables.module";
+
 .NavigationItem {
     margin-bottom: 0;
 
     a {
         background: transparent;
         vertical-align: baseline;
-        font-size: 4rem;
+        font-size: $font-xxl;
         font-weight: 700;
         line-height: 1.5em;
         letter-spacing: 0.2rem;
@@ -34,32 +36,32 @@
 
 @media (min-width: 1860px) {
     .NavigationItem a {
-        font-size: 4rem;
+        font-size: $font-xxl;
     }
 }
 @media (min-width: 1500px) and (max-width: 1859px) {
     .NavigationItem a {
-        font-size: 4rem;
+        font-size: $font-xxl;
     }
 }
 @media (min-width: 1290px) and (max-width: 1499px) {
     .NavigationItem a {
-        font-size: 4rem;
+        font-size: $font-xxl;
     }
 }
 @media (min-width: 1024px) and (max-width: 1289px) {
     .NavigationItem a {
-        font-size: 4rem;
+        font-size: $font-xxl;
     }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
     .NavigationItem a {
-        font-size: 4rem;
+        font-size: $font-xxl;
     }
 }
 @media (max-width: 767px) {
     .NavigationItem a {
-        font-size: 4rem;
+        font-size: $font-xxl;
         line-height: 1.47em;
         font-weight: 300;
         letter-spacing: 0.74px;

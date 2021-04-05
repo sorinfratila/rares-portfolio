@@ -10,7 +10,7 @@ import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 
 import * as classes from "./Menu.module.scss"
-import * as fade from "../../../transitions/Fade.module.scss"
+import * as fade from "../../../styles/transitions/Fade.module.scss"
 
 function Menu({ clicked, show, menuList, backdropClicked }) {
     const [showFooter, setShowFooter] = useState(false)

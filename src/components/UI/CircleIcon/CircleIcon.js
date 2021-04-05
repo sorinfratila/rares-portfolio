@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import * as classes from "./CircleIcon.module.scss"
-import * as fade from "../../../transitions/Fade.module.scss"
+import * as fade from "../../../styles/transitions/Fade.module.scss"
 
 CircleIcon.propTypes = {
     icon: PropTypes.func,

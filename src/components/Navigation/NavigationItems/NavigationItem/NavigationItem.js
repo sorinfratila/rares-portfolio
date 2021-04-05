@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import * as classes from "./NavigationItem.module.scss"
 import { Link } from "gatsby"
-import * as fade from "../../../../transitions/Fade.module.scss"
+import * as fade from "../../../../styles/transitions/Fade.module.scss"
 
 function NavigationItem({ link, children, show, clicked }) {
     const classesArr = show
