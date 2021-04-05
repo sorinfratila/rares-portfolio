@@ -18,7 +18,7 @@ class HomePage extends Component {
     render() {
         const { inProp } = this.state
         return (
-            <>
+            <div className={classes.Container}>
                 <section
                     className={[classes.First, global.Capitalize].join(" ")}
                     style={{
@@ -27,7 +27,7 @@ class HomePage extends Component {
                 >
                     <Appear duration={1000} inProp={inProp}>
                         <h2>Hello, I'm</h2>
-                        <h1> Rareș Rusu</h1>
+                        <h1>Rareș Rusu</h1>
                         <h2
                             className={[
                                 classes.Uppercase,
@@ -38,8 +38,21 @@ class HomePage extends Component {
                         </h2>
                     </Appear>
                 </section>
-                <section className={classes.Second} />
-            </>
+                <section className={classes.Second}>
+                    <h1>What I do</h1>
+                    <h3>
+                        Digital Consultant with an interest for software
+                        development, user-centred design and product management
+                    </h3>
+                    <h4>
+                        Focused on research, design and implement the best user
+                        experience paths for digital products that offer high
+                        consumer satisfaction. During my projects, I am trying
+                        to stay on top of all development aspects from strategy
+                        to implementation.
+                    </h4>
+                </section>
+            </div>
         )
     }
 }

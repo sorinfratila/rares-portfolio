@@ -12,7 +12,7 @@ const typography = new Typography({
         },
         {
             name: "Roboto",
-            styles: ["300", "400", "500", "600", "700"],
+            styles: ["100", "200", "300", "400", "500", "600", "700"],
         },
         {
             name: "sans-serif",
